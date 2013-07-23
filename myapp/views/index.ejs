@@ -1,11 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="/stylesheets/jquery.mobile1.3.1.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<link rel="stylesheet" href="/stylesheets/menu.css">
+	<link rel="stylesheet" href="/stylesheets/main.css">
+	<script src="/js/jquery-1.10.2.js"></script>
+	<script src="/js/jquery.mobile-1.3.1.js"></script>
+	<script src="/js/jqm.fb.menu.js"></script>
+</head>
+<body>
+<div id="menu">
+	<div class="topArea"> </div>
+	<ul>
+		<li class="ui-menu-list-odd menu-font"><a href="#">박신혜</a></li>
+		<li class="menu-font"><a href="#">김태희</a></li>
+		<li class="ui-menu-list-odd menu-font"><a href="#">조윤희</a></li>
+		<li class="menu-font"><a href="#">한지혜</a></li>
+		<li class="ui-menu-list-odd menu-font"><a href="#">수지</a></li>
+	</ul>
+</div>
+<div class="page-container ui-mobile-viewport ui-overlay-c">
+	<div data-role="page" data-theme="a" id="demo-page" class="my-page" data-url="demo-page">
+		<div data-role="header">
+			<a href="#" data-theme="f" class="showMenu ui-btn-left" data-icon="media-list" data-icon-pos="notext">메뉴</a>
+			<h1>News</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#">
+					<img src="/images/1.jpg">
+					<h2>iOS 6.1</h2>
+					<p>Apple released iOS 6.1</p>
+					<p class="ui-li-aside">iOS</p>
+				</a></li>
+				<li><a href="#">
+					<img src="/images/1367736200.jpg">
+					<h2>BlackBerry 10</h2>
+					<p>BlackBerry launched the Z10 and Q10 with the new BB10 OS</p>
+					<p class="ui-li-aside">BlackBerry</p>
+				</a></li>
+				<li><a href="#">
+					<img src="/images/1360391139_20130205_psh01.jpg">
+					<h2>WP 7.8</h2>
+					<p>Nokia rolls out WP 7.8 to Lumia 800</p>
+					<p class="ui-li-aside">Windows Phone</p>
+				</a></li>
+				<li><a href="#">
+					<img src="/images/20130513111510851.jpg">
+					<h2>Galaxy</h2>
+					<p>New Samsung Galaxy Express</p>
+					<p class="ui-li-aside">Samsung</p>
+				</a></li>
+				<li><a href="#">
+					<img src="/images/20130214144617190.jpg">
+					<h2>Nexus 7</h2>
+					<p>Rumours about new full HD Nexus 7</p>
+					<p class="ui-li-aside">Android</p>
+				</a></li>
+				<li><a href="#">
+					<img src="/images/20130213152255566.jpg">
+					<h2>Firefox OS</h2>
+					<p>ZTE to launch Firefox OS smartphone at MWC</p>
+					<p class="ui-li-aside">Firefox</p>
+				</a></li>
+				<li><a href="#">
+					<img src="/images/20110718160907630.jpg">
+					<h2>Tizen</h2>
+					<p>First Samsung phones with Tizen can be expected in 2013</p>
+					<p class="ui-li-aside">Tizen</p>
+				</a></li>
+				<li><a href="#">
+					<img src="/images/20110615103345205.jpg">
+					<h2>Symbian</h2>
+					<p>Nokia confirms the end of Symbian</p>
+					<p class="ui-li-aside">Symbian</p>
+				</a></li>
+			</ul>
+		</div><!-- /content -->
+		<div data-role="footer" data-theme="none">
+			<h3>Responsive Grid Listview</h3>
+		</div><!-- /footer -->
+	</div>
+</div>
+</body>
 </html>

@@ -1,0 +1,72 @@
+
+
+#menu .topArea{
+	height:40px;
+	border:1px solid #000;
+	background-color: #353f54;
+}
+
+#menu {
+	width: 240px;
+	height: 100%;
+	display: none;
+	position: absolute;
+	left:0;
+	top:0;
+	background-color: black;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	font-family: arial;
+	font-size: 17px;
+	font-weight: bold;
+	list-style-type: none;
+	display:block;
+	cursor:pointer;
+	list-style-position: outside;
+	-webkit-tap-highlight-color: transparent;
+	box-shadow:none;
+}
+
+
+#menu ul li .iconImage{
+	float:left;
+	width:25px;
+	height:25px;
+	margin-top:9px;
+	margin-left:11px;
+	margin-right:13px;
+	background-size: 200%;
+	background-position: 0;
+	background-color: transparent;
+}
+
+#menu ul .active .iconImage{
+	background-position: 100%;
+}
+
+#menu ul li {
+	-webkit-tap-highlight-color: transparent;
+	display:block;
+}
+
+#menu ul .ui-menu-list-odd a{
+	background-image:url(/images/setting_lightbg.png);
+}
+
+#menu ul li a{
+	line-height:43px;
+	width: 240px;
+	display: block;
+	color:#cccccc;
+}
+
+
+
+#menu ul .active a {
+	border-right:10px solid #99bce6;
+	color:#99bce6;
+	box-sizing:border-box;
+}

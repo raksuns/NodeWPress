@@ -3,28 +3,60 @@
  */
 
 var express = require('express'),
-	redis = require('redis'),
-	db = redis.createClient(),
-	app = express();
+	routes = require('./routes'),
+	user = require('./routes/user'),
+	member = require('./routes/member'),
+	http = require('http'),
+	path = require('path');
 
-app.use(function(req, res, next){
-	var ua = req.headers['user-agent'];
-	db.zadd('online', Date.now(), ua, next);
+var app = express();
+
+app.configure(function() {
+	app.set('port', process.env.PORT || 3000);
+	app.set('views', __dirname + '/views');
+	app.set('view engine', 'ejs');
+	app.use(express.favicon());
+	app.use(express.logger('dev'));
+	app.use(express.bodyParser());
+	app.use(express.methodOverride());
+	app.use(express.cookieParser('your secret here'));
+	app.use(express.session());
+	app.use(app.router);
+	app.use(logErrors);
+	app.use(clientErrorHandler);
+	app.use(errorHandler);
+	app.use(require('stylus').middleware(__dirname + '/public'));
+	app.use(express.static(path.join(__dirname, 'public')));
 });
 
-app.use(function(req, res, next){
-	var min = 60 * 1000;
-	var ago = Date.now() - min;
-	
-	db.zrevrangebyscore('online', '+inf', ago, function(err, users){
-		if (err) return next(err);
-		req.online = users;
-		next();
-	});
+app.configure('development', function() {
+	app.use(express.errorHandler());
 });
 
-app.get('/', function(req, res){
-	res.send(req.online.length + ' users online');
+app.get('/', routes.index);
+app.get('/users', user.list);
+app.get('/member', member.list);
+
+http.createServer(app).listen(app.get('port'), function() {
+	console.log("Express server listening on port " + app.get('port'));
 });
 
-app.listen(3000);
+
+function logErrors(err, req, res, next) {
+	console.error(err.stack);
+	next(err);
+}
+
+function clientErrorHandler(err, req, res, next) {
+	if (req.xhr) {
+		res.send(500, { error: 'Something blew up!' });
+	}
+	else {
+		next(err);
+	}
+}
+
+function errorHandler(err, req, res, next) {
+	res.status(500);
+	res.render('error', { error: err });
+}

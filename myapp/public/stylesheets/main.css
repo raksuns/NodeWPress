@@ -1,0 +1,101 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	overflow: hidden;
+}
+
+.items {
+	background-image: url(images/sub_title_bg.png);
+	text-align: right;
+	font-size: 12pt;
+	padding-right: 5px;
+	line-height: 27px;
+	color: white;
+	text-shadow:  0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 0 /*{c-body-shadow-radius}*/ black /*{c-body-shadow-color}*/;
+}
+
+.ui-content {
+	border-width: 0;
+	padding: 0px;
+	overflow : hidden;
+	position: relative;
+	width: 100%;
+	bottom: 0;
+}
+
+a:link, a:visited{
+	text-decoration:none;
+}
+
+.ui-page.ui-body-c {
+	background-image: url('images/body_bg.png');
+	overflow: hidden;
+}
+.pages h3 {
+	margin: 0;
+	font-size: 20px;
+}
+
+.search-area {
+}
+
+.ui-btn-inner {
+	font-size: 14px;
+	padding: .4em 10px;
+	min-width: .75em;
+	display: block;
+	position: relative;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	zoom: 1;
+}
+
+.ui-btn-up-c {
+	border: 0px;
+	background: #333 /*{a-bup-background-color}*/;
+	font-weight: bold;
+	color: white /*{a-bup-color}*/;
+	text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 1px /*{a-bup-shadow-radius}*/ #111 /*{a-bup-shadow-color}*/;
+	background: -webkit-linear-gradient(top, rgb(222, 241, 248) 6%, rgb(167, 215, 235) 44%, rgb(163, 199, 213) 100%);
+	background: linear-gradient(top, rgb(222, 241, 248) 6%, rgb(167, 215, 235) 44%, rgb(163, 199, 213) 100%);
+}
+
+.ui-btn-hover-c {
+	border: 0px;
+	font-weight: bold;
+	color: 					#fff /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #111 /*{a-bhover-shadow-color}*/;
+	background: -webkit-linear-gradient(top, rgb(222, 241, 248) 6%, rgb(167, 215, 235) 44%, rgb(163, 199, 213) 100%);
+	background: linear-gradient(top, rgb(222, 241, 248) 6%, rgb(167, 215, 235) 44%, rgb(163, 199, 213) 100%);
+}
+
+.ui-btn-down-c {
+	border: 0px;
+	font-weight: bold;
+	color: 					#fff /*{a-bdown-color}*/;
+	text-shadow: 0 /*{a-bdown-shadow-x}*/ 1px /*{a-bdown-shadow-y}*/ 1px /*{a-bdown-shadow-radius}*/ #111 /*{a-bdown-shadow-color}*/;
+	background: -webkit-linear-gradient(top, rgb(222, 241, 248) 6%, rgb(167, 215, 235) 44%, rgb(163, 199, 213) 100%);
+	background: linear-gradient(top, rgb(222, 241, 248) 6%, rgb(167, 215, 235) 44%, rgb(163, 199, 213) 100%);
+}
+
+.page-container {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	bottom: 0px;
+}
+
+.page-content {
+	position:absolute;
+	top:48px;
+	bottom:0px;
+	overflow:auto;
+}
