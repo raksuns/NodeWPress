@@ -8,7 +8,7 @@ body {
 }
 
 .items {
-	background-image: url(images/sub_title_bg.png);
+	background-image: url(/images/sub_title_bg.png);
 	text-align: right;
 	font-size: 12pt;
 	padding-right: 5px;
@@ -31,7 +31,7 @@ a:link, a:visited{
 }
 
 .ui-page.ui-body-c {
-	background-image: url('images/body_bg.png');
+	background-image: url('/images/body_bg.png');
 	overflow: hidden;
 }
 .pages h3 {

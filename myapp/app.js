@@ -3,11 +3,15 @@
  */
 
 var express = require('express'),
+	http = require('http'),
+	path = require('path'),
 	routes = require('./routes'),
 	user = require('./routes/user'),
 	member = require('./routes/member'),
-	http = require('http'),
-	path = require('path');
+	chat = require('./routes/chat'),
+	chatting = require('./routes/chatting')
+	;
+
 
 var app = express();
 
@@ -36,10 +40,15 @@ app.configure('development', function() {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/member', member.list);
+app.get('/chat', chat.action);
+app.get('/chatting', chatting.action);
 
-http.createServer(app).listen(app.get('port'), function() {
+var server = http.createServer(app);
+var io = require('socket.io').listen(server, function() {
 	console.log("Express server listening on port " + app.get('port'));
 });
+
+server.listen(3000);
 
 
 function logErrors(err, req, res, next) {
