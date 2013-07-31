@@ -7,7 +7,7 @@ var express = require('express'),
 	path = require('path'),
 	routes = require('./routes'),
 	user = require('./routes/user'),
-	member = require('./routes/member'),
+//	member = require('./routes/member'),
 	chat = require('./routes/chat'),
 	chatting = require('./routes/chatting')
 	;
@@ -39,17 +39,17 @@ app.configure('development', function() {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-app.get('/member', member.list);
+//app.get('/member', member.list);
 app.get('/chat', chat.action);
-app.get('/chatting', chatting.action);
 
 var server = http.createServer(app);
 var io = require('socket.io').listen(server, function() {
 	console.log("Express server listening on port " + app.get('port'));
 });
 
-server.listen(3000);
+require("./routes/chatting")(io);
 
+server.listen(3000);
 
 function logErrors(err, req, res, next) {
 	console.error(err.stack);
